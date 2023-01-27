@@ -126,20 +126,24 @@ public class Main {
 
       IntPredicate greater = i -> i >15;
 
-        List<String> someBingoNumbers = Arrays.asList(
+        List<String> listString = Arrays.asList(
                 "Z40", "K36","N40", "N36", "B12", "F12",
                 "B69", "G53", "G49", "G60", "G50", "X12",
                 "g64", "I26", "I17", "I29", "O71", "A45");
 
-//        someBingoNumbers.sort((String s1, String s2) -> s1.compareToIgnoreCase(s2));
-//        someBingoNumbers.forEach((s1) -> System.out.println(s1));
-//        someBingoNumbers.sort(( s1,  s2) -> s1.compareToIgnoreCase(s2));
-//        someBingoNumbers.forEach((s1) -> System.out.println(s1));
+//        listString.sort((String s1, String s2) -> s1.compareToIgnoreCase(s2));
+//        listString.forEach((s1) -> System.out.println(s1));
+//        listString.sort(( s1,  s2) -> s1.compareToIgnoreCase(s2));
+//        listString.forEach((s1) -> System.out.println(s1));
 
-for(String string: someBingoNumbers){
-    System.out.println(ThreadColor.ANSI_CYAN + string);
-}
+        for(String string: listString){
+            string2 = string;
+            System.out.println(ThreadColor.ANSI_CYAN + string.toUpperCase());
+        }
+
+        listString.stream().map(String::toUpperCase).filter(s -> s.startsWith("G")).forEach(System.out::println);
 
     }
+    public static String string2;
     }
 

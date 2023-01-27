@@ -1,4 +1,4 @@
-public class A_StringMethods {
+public class CH_StringMethods {
 
 
     public static void main(String[] args) {

@@ -1,14 +1,11 @@
-import lombok.Getter;
-
-
-public class A_Student {
+public class CH_Student {
 
     private String id;
     private String name;
     private String dataOfBirth;
     private String classList;
 
-    public A_Student(String id, String name, String dataOfBirth, String classList) {
+    public CH_Student(String id, String name, String dataOfBirth, String classList) {
         this.id = id;
         this.name = name;
         this.dataOfBirth = dataOfBirth;
@@ -17,7 +14,7 @@ public class A_Student {
 
     @Override
     public String toString() {
-        return "A_Student{" +
+        return "CH_Student{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", dataOfBirth='" + dataOfBirth + '\'' +
@@ -60,7 +57,7 @@ public class A_Student {
 
     public static void main(String[] args) {
         for (int i = 1; i < 5; i++) {
-            A_Student student = new A_Student("E6578" + i,
+            CH_Student student = new CH_Student("E6578" + i,
                     switch (i){
                         case 1 -> "Mary";
                         case 2 -> "John";

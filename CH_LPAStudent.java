@@ -1,8 +1,8 @@
 
-public record A_LPAStudent( String id, String name,  String dataOfBirth, String classList) {
+public record CH_LPAStudent(String id, String name, String dataOfBirth, String classList) {
     public static void main(String[] args) {
         for (int i = 1; i < 5; i++) {
-            A_LPAStudent recordStudent = new A_LPAStudent("E6578" + i,
+            CH_LPAStudent recordStudent = new CH_LPAStudent("E6578" + i,
                     switch (i){
                         case 1 -> "Mary";
                         case 2 -> "John";

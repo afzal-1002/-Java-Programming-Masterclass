@@ -1,29 +1,29 @@
-public class A_Dog extends  A_Animal{
+public class CH_Dog extends CH_Animal {
 
     private String earShape;
     private String tailShape;
 
-    public A_Dog() {
+    public CH_Dog() {
         super("Mutt", "Big", 45);
     }
 
-    public A_Dog(String type, double weight){
+    public CH_Dog(String type, double weight){
         this(type, weight, "Perky", "Curled");
     }
-    public A_Dog(String type,  double weight, String earShape, String tailShape) {
+    public CH_Dog(String type, double weight, String earShape, String tailShape) {
         super(type, weight < 15 ? "Small" : (weight < 35 ? "Medium" : "Large"), weight);
         this.earShape = earShape;
         this.tailShape = tailShape;
     }
 
-    public A_Dog(String earShape, String tailShape) {
+    public CH_Dog(String earShape, String tailShape) {
         this.earShape = earShape;
         this.tailShape = tailShape;
     }
 
     @Override
     public String toString() {
-        return "A_Dog{" +
+        return "CH_Dog{" +
                 "earShape='" + earShape + '\'' +
                 ", tailShape='" + tailShape + '\'' +
                 '}';

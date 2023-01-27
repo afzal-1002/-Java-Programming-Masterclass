@@ -1,4 +1,4 @@
-public class A_Animal {
+public class CH_Animal {
     private String type;
     private String size;
     private double weight;
@@ -10,11 +10,11 @@ public class A_Animal {
         System.out.println(type + "  makes some kind of noise.");
     }
 
-    public A_Animal() {
+    public CH_Animal() {
 
     }
 
-    public A_Animal(String type, String size, double weight) {
+    public CH_Animal(String type, String size, double weight) {
         this();
         this.type = type;
         this.size = size;
@@ -59,17 +59,17 @@ public class A_Animal {
     public static void main(String[] args) {
 
 
-        A_Animal animal = new A_Animal("Generic Animal", "Huge", 400);
+        CH_Animal animal = new CH_Animal("Generic Animal", "Huge", 400);
 
         doAnimalStuff(animal, "Slow ");
 
-        A_Dog dog = new A_Dog();
+        CH_Dog dog = new CH_Dog();
         doAnimalStuff(dog, "fast");
 
-        A_Dog yorkie = new A_Dog("Yorkie ", 15);
+        CH_Dog yorkie = new CH_Dog("Yorkie ", 15);
         doAnimalStuff(yorkie, "Fast");
 
-        A_Dog retriever = new A_Dog("Labrador Retriever", 65, "Floppt", "Swimmer");
+        CH_Dog retriever = new CH_Dog("Labrador Retriever", 65, "Floppt", "Swimmer");
         doAnimalStuff(retriever, "Slow");
 
 
@@ -77,7 +77,7 @@ public class A_Animal {
 
 
 
-    public static void doAnimalStuff(A_Animal animal, String speed){
+    public static void doAnimalStuff(CH_Animal animal, String speed){
         animal.makeNoise();
         animal.move(speed);
         System.out.println(animal);

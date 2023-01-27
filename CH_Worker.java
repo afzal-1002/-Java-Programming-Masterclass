@@ -1,96 +1,78 @@
-class Employee extends A_Worker{
+public class CH_Worker {
+    private String name;
+    private String birthDate;
+    protected String endDate;
 
-    private static long employeeId;
-    private String hiringDate;
-
-    public Employee(String name, String birthDate, String hiringDate) {
-        super(name, birthDate);
-        this.employeeId = Employee.employeeId++;
-        this.hiringDate = hiringDate;
+    public A_Worker() {
     }
 
-    public long getEmployeeId() {
-        return employeeId;
+    public A_Worker(String name, String birthDate) {
+        this.name = name;
+        this.birthDate = birthDate;
     }
 
-    public void setEmployeeId(long employeeId) {
-        this.employeeId = employeeId;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "employeeId=" + employeeId +
-                ", hiringDate='" + hiringDate + '\'' +
+        return "A_Worker{" +
+                "name='" + name + '\'' +
+                ", birthDate='" + birthDate + '\'' +
+                ", endDate='" + endDate + '\'' +
                 '}';
     }
 
-    public String getHiringDate() {
-        return hiringDate;
+    public int getAge() {
+        int currentYear = 2023;
+        int yearOfBirth = Integer.parseInt(birthDate.substring(6));
+        return (currentYear - yearOfBirth);
     }
 
-    public void setHiringDate(String hiringDate) {
-        this.hiringDate = hiringDate;
+    public double collectPay() {
+        return 0.0;
     }
 
-}
-
-
-class SalariedEmployee extends Employee{
-    private double annualSalary;
-    private boolean isRetired;
-
-
-    public SalariedEmployee(String name, String birthDate, String endDate, double annualSalary, boolean isRetired) {
-        super(name, birthDate, endDate);
-        this.annualSalary = annualSalary;
-        this.isRetired = isRetired;
+    public void terminate(String endDate) {
+        if (endDate == "10-02-1990") {
+            System.out.println("Your Contract Ends Already! ");
+        }
     }
 
-    public void retire(){
-        System.out.println("Inside the SalariedEmployee Class and Method is retire()");
+    public static void main(String[] args) {
+        Employee tim = new Employee("tim", "10/02/1990", "21/02/2022");
+        System.out.println(tim);
+        System.out.println("Age = " + tim.getAge());
+
+        SalariedEmployee joe = new SalariedEmployee("Joe", "10/02/1993", "10/05/2022",
+                2600, true);
+        System.out.println(joe);
+        System.out.println("Joes Check = " + joe.collectPay());
+
+        HourlyEmployee mary = new HourlyEmployee("Mary", "10/02/1993", "10/10/2025", 45.5);
+        System.out.println(mary);
+        System.out.println("Mary's PayCheck = " + mary.collectPay());
+        System.out.println("Mary Holiday pay = " + mary.getDoublePay());
     }
-
-    @Override
-    public double collectPay(){
-        return (int)  annualSalary / 26;
-    }
-
-    @Override
-    public String toString() {
-        return  "SalariedEmployee{" +
-                "annualSalary=" + annualSalary +
-                ", isRetired=" + isRetired +
-                '}' ;
-    }
-}
-
-
-class HourlyEmployee extends Employee{
-    private double hourlyPayRate;
-
-    public HourlyEmployee(String name, String birthDate, String endDate, double hourlyPayRate) {
-        super(name, birthDate, endDate);
-        this.hourlyPayRate = hourlyPayRate;
-    }
-
-    public double getHourlyPayRate() {
-        return hourlyPayRate;
-    }
-
-    public void setHourlyPayRate(double hourlyPayRate) {
-        this.hourlyPayRate = hourlyPayRate;
-    }
-
-    public double getDoublePay(){
-        return 2 * collectPay();
-    }
-
-    @Override
-    public double collectPay(){
-        return 40 * hourlyPayRate;
-    }
-
-
-
 }
